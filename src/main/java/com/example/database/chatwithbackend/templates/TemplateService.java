@@ -1,4 +1,4 @@
-package com.example.database.dbmanager.templateTable;
+package com.example.database.chatwithbackend.templates;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,9 +9,9 @@ import java.util.List;
 public class TemplateService {
 
     @Autowired
-    DatabaseManager databaseManager;
+    templatesDbManager templatesDbManager;
 
     public List<Template> getTemplates(){
-        return databaseManager.getTemplates();
+        return templatesDbManager.getTemplates();
     }
 }

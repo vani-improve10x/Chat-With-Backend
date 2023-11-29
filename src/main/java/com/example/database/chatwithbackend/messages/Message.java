@@ -1,4 +1,4 @@
-package com.example.database.dbmanager.MessageTable;
+package com.example.database.chatwithbackend.messages;
 
 public class Message {
     public int messageId;

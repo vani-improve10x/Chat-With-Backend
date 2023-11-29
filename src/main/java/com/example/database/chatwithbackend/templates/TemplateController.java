@@ -1,4 +1,4 @@
-package com.example.database.dbmanager.templateTable;
+package com.example.database.chatwithbackend.templates;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

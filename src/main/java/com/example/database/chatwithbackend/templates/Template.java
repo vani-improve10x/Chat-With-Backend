@@ -1,4 +1,4 @@
-package com.example.database.dbmanager.templateTable;
+package com.example.database.chatwithbackend.templates;
 
 public class Template {
     public int templateId;
