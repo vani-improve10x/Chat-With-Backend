@@ -27,4 +27,9 @@ public class MessageController {
     public int updatedMessage(@PathVariable("id") int messageId, @RequestParam String name,@RequestParam String mobileNumber){
         return messageService.updatedMessage(messageId,name,mobileNumber);
     }
+
+    @DeleteMapping(value = "listOfMessages/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public void deletedMessage(@PathVariable("id") int messageId){
+        messageService.deletedMessage(messageId);
+    }
 }

@@ -30,6 +30,4 @@ public abstract class DatabaseManager<T> {
         connection.close();
         return result;
     }
-//    protected abstract T convertToUpdateObject(ResultSet resultSet)throws SQLException;
-
 }

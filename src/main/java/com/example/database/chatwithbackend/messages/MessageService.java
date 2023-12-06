@@ -23,4 +23,8 @@ public class MessageService {
     public int updatedMessage(int messageId, String name, String mobileNumber){
         return messagesDbManager.updatedMessage(messageId,name,mobileNumber);
     }
+
+    public void deletedMessage(int messageId){
+        messagesDbManager.deletedMessage(messageId);
+    }
 }

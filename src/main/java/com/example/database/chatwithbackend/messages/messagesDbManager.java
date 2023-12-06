@@ -58,4 +58,14 @@ public class messagesDbManager extends DatabaseManager<Message> {
             throw new RuntimeException(e);
         }
     }
+
+    public void deletedMessage(int messageId) {
+        try {
+            updateRunQuery("delete from Message where messageId = "+messageId+" ;");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
