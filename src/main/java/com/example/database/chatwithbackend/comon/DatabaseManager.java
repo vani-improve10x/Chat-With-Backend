@@ -22,4 +22,14 @@ public abstract class DatabaseManager<T> {
     }
 
     protected abstract List<T> convertToObject(ResultSet resultSet)throws SQLException;
+    protected int updateRunQuery(String query ) throws SQLException, ClassNotFoundException {
+        int result;
+        Connection connection = createConnection();
+        Statement statement = connection.createStatement();
+        result = statement.executeUpdate(query);
+        connection.close();
+        return result;
+    }
+//    protected abstract T convertToUpdateObject(ResultSet resultSet)throws SQLException;
+
 }

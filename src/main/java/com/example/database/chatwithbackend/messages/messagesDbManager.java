@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service("d2")
-public class messagesDbManager extends DatabaseManager<Message>{
+public class messagesDbManager extends DatabaseManager<Message> {
 
-    public List<Message> getTemplates() {
+    public List<Message> getMessages() {
         try {
             List<Message> messageList = runQuery("select * from Message");
             return messageList;
@@ -34,5 +34,17 @@ public class messagesDbManager extends DatabaseManager<Message>{
             messageList.add(message);
         }
         return messageList;
+    }
+
+
+    public int updateMessages(int messageId, String name) {
+        try {
+             int result = updateRunQuery("update Message set name = '"+name+"' where messageId = "+messageId+" ;");
+             return result;
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

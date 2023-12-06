@@ -11,7 +11,7 @@ import java.util.List;
 public class templatesDbManager extends DatabaseManager<Template> {
     public List<Template> getTemplates() {
         try {
-            List<Template> templates =  runQuery("select * from Template");
+            List<Template> templates = runQuery("select * from Template");
             return templates;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -23,9 +23,8 @@ public class templatesDbManager extends DatabaseManager<Template> {
     }
 
 
-
     @Override
-    protected List<Template> convertToObject(ResultSet resultSet) throws SQLException{
+    protected List<Template> convertToObject(ResultSet resultSet) throws SQLException {
         List<Template> templates = new ArrayList<>();
         while (resultSet.next()) {
             Template template = new Template();
@@ -35,5 +34,15 @@ public class templatesDbManager extends DatabaseManager<Template> {
             templates.add(template);
         }
         return templates;
+    }
+
+    public void updateTemplate(int templateId, String messageText) {
+        try {
+             updateRunQuery("update Template set messageText = '"+messageText+"' where  templateId = " + templateId + " ;");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

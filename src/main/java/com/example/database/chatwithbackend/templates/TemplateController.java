@@ -2,9 +2,7 @@ package com.example.database.chatwithbackend.templates;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +16,10 @@ public class TemplateController {
     @GetMapping(value = "templates",produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Template> getTemplates(){
         return templateService.getTemplates();
+    }
+
+    @PutMapping(value = "templates/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public void updateTemplate(@PathVariable("id") int templateId, @RequestParam String messageText){
+        templateService.updateTemplate(templateId,messageText);
     }
 }
