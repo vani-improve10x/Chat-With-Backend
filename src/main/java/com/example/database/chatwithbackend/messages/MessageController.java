@@ -22,4 +22,9 @@ public class MessageController {
     public int updateMessage(@PathVariable("id") int  messageId, @RequestParam String name){
         return messageService.updateMessage(messageId,name);
     }
+
+    @PutMapping(value = "listOfMessages/{id}/", produces = MediaType.APPLICATION_JSON_VALUE)
+    public int updatedMessage(@PathVariable("id") int messageId, @RequestParam String name,@RequestParam String mobileNumber){
+        return messageService.updatedMessage(messageId,name,mobileNumber);
+    }
 }

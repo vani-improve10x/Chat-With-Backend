@@ -19,4 +19,8 @@ public class MessageService {
     public int updateMessage(int messageId, String name) {
         return messagesDbManager.updateMessages(messageId, name);
     }
+
+    public int updatedMessage(int messageId, String name, String mobileNumber){
+        return messagesDbManager.updatedMessage(messageId,name,mobileNumber);
+    }
 }

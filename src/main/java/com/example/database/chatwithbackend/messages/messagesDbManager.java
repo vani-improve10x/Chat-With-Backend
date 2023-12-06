@@ -47,4 +47,15 @@ public class messagesDbManager extends DatabaseManager<Message> {
             throw new RuntimeException(e);
         }
     }
+
+    public int updatedMessage(int messageId, String name, String mobileNumber) {
+        try {
+             int result = updateRunQuery("update Message set name = '"+name+"',mobileNumber = '"+mobileNumber+"' where messageId = "+messageId+" ;");
+             return result;
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
